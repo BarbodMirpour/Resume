@@ -941,11 +941,10 @@ footer{border-top:1px solid var(--border);padding:clamp(90px,13vh,150px) 0 36px}
       <button class="btn btn-primary" id="emailBtn">
         <svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 7L2 7"/></svg>
         brbdmirpour@gmail.com · click to copy
-      </button>
-      <button class="btn btn-ghost" id="pdfBtn">
-        <svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="2" y="9" width="20" height="8" rx="2"/><path d="M6 15h12v6H6z"/></svg>
-        Save as PDF
-      </button>
+      <a class="btn btn-ghost" href="resume.pdf" download>
+  <svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+  Download PDF
+</a>
     </div>
     <div class="foot-links" data-reveal style="--d:.2s">
       <!-- ✏️ EDIT: your LinkedIn URL -->
@@ -1116,7 +1115,7 @@ function toast(msg){const t=$('#toast');$('#toastMsg').textContent=msg;t.classLi
   try{await navigator.clipboard.writeText(email);toast('Email copied to clipboard.');}
   catch(_){toast('Email: '+email);}
 });
- $('#pdfBtn').addEventListener('click',()=>window.print());
+ 
  $('#topBtn').addEventListener('click',()=>scrollTo({top:0,behavior:reduced?'auto':'smooth'}));
  $('#orbitBtn').addEventListener('click',()=>$('#contact').scrollIntoView({behavior:reduced?'auto':'smooth'}));
 
